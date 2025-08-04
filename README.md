@@ -34,13 +34,10 @@
 ### 安装步骤
 
 1. **下载仓库ZIP**
-   ```
-
+2. 
    <img width="995" height="482" alt="0cea3a98-de76-4916-bb62-0cf43cdf3517" src="https://github.com/user-attachments/assets/7f618881-8033-42eb-9dd1-b895297bc73f" />
 
-   ```
-
-2. **根据里面的教程一键安装即可**
+3. **根据里面的教程一键安装即可**
    ```
    随后打开exe文件即可！
    ```
