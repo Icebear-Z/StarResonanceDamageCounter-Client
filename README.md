@@ -36,16 +36,10 @@
 <img width="415" height="308" alt="7d6a5995-cd28-4c74-bdd6-797b0c439066" src="https://github.com/user-attachments/assets/e9d33a58-7724-4b82-922f-2fefb3d2c149" />
 
   直接点击下载安装包
-   ```
-<img width="553" height="467" alt="image" src="https://github.com/user-attachments/assets/49dd5193-32ae-436f-845a-09b58fe070fd" />
 
-<img width="553" height="216" alt="image" src="https://github.com/user-attachments/assets/c238eec6-7277-4507-86bb-26c6245e5c39" />
+  跟着里面的教程就可以一键搭建喵~
 
-<img width="553" height="304" alt="image" src="https://github.com/user-attachments/assets/bfd6ef9e-e0d1-4c0b-9f60-fcba00f382c0" />
-
-<img width="553" height="795" alt="image" src="https://github.com/user-attachments/assets/8f8ff441-eea0-42f5-a1c3-da4b1b154dd6" />
-
-然后打开DPS显示器.exe就行了
+  然后打开DPS显示器.exe就行了
 
 
 ### 使用方法
