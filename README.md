@@ -1,4 +1,4 @@
-# 星痕共鸣实时战斗数据统计工具 (Star Resonance Damage Counter)
+# 星痕共鸣实时战斗数据统计工具- 客户端 一键安装&游戏屏幕显示 (StarResonanceDamageCounter-Client)
 
 [![License: MPL 2.0](https://img.shields.io/badge/License-MPL%202.0-brightgreen.svg)](https://opensource.org/licenses/MPL-2.0)
 [![Node.js](https://img.shields.io/badge/Node.js-18%2B-green.svg)](https://nodejs.org/)
@@ -10,7 +10,7 @@
 
 该工具无需修改游戏客户端，不违反游戏服务条款。该工具旨在帮助玩家更好地理解战斗数据，减少无效提升，提升游戏体验。使用该工具前，请确保不会将数据结果用于战力歧视等破坏游戏社区环境的行为。
 
-[介绍视频](https://www.bilibili.com/video/BV1T4hGzGEeX/)
+[介绍视频]([https://www.bilibili.com/video/BV1T4hGzGEeX/](https://www.bilibili.com/video/BV1vohjzTEiX/?spm_id_from=333.1387.homepage.video_card.click&vd_source=f31af4ca9b27f30a85203528c8602c0d))
 
 ## ✨ 功能特性
 
@@ -22,41 +22,27 @@
 - 🔄 **自动刷新** - 数据实时更新，无需手动刷新
 - 📈 **统计分析** - 暴击率、幸运率等详细统计信息
 
+- ☀ 这个版本增加了什么？
+- 一键安装 无需配置环境
+- 一键启动 配置更新
+- web保留的同时增加了在游戏窗口内显示
+- 我哦哦哦我是男神
+
 ## 🚀 快速开始
 
-### 前置要求
-
-- **Node.js** >= 22.15.0
-- **pnpm** >= 10.13.1
-- **WinPcap/Npcap** (网络抓包驱动)
-- **Visual Studio Build Tools** (编译依赖) 
-  - 可通过 [Visual Studio Installer](https://visualstudio.microsoft.com/visual-cpp-build-tools/) 安装
-  - 选择“C++ 生成工具”工作负载
-- **Python** 3.10 (编译依赖)
-  - 可通过 [Python 官网](https://www.python.org/downloads/) 下载并安装
-  - 确保 Python 添加到系统 PATH 中
 
 ### 安装步骤
 
-1. **克隆仓库**
-   ```bash
-   git clone https://github.com/dmlgzs/StarResonanceDamageCounter.git
-   cd StarResonanceDamageCounter
+1. **下载仓库ZIP**
    ```
 
-2. **安装依赖**
-   ```bash
-   corepack enable
-   pnpm install
+   <img width="995" height="482" alt="0cea3a98-de76-4916-bb62-0cf43cdf3517" src="https://github.com/user-attachments/assets/7f618881-8033-42eb-9dd1-b895297bc73f" />
+
    ```
 
-3. **安装 WinPcap/Npcap**
-   - 下载并安装 [Npcap](https://nmap.org/npcap/) 或 [WinPcap](https://www.winpcap.org/)（推荐 Npcap）
-   - 确保安装时选择了“WinPcap API-compatible mode”
-
-4. **运行**
-   ```bash
-   node server.js
+2. **根据里面的教程一键安装即可**
+   ```
+   随后打开exe文件即可！
    ```
 
 ### 使用方法
