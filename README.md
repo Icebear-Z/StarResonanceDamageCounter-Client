@@ -22,42 +22,31 @@
 - 🔄 **自动刷新** - 数据实时更新，无需手动刷新
 - 📈 **统计分析** - 暴击率、幸运率等详细统计信息
 
+-  ☀ 这个版本有什么？
+-  一键安装的环境
+-  客户端一键移动
+-  在游戏上方显示DPS信息，并且保留了网络功能
+
 ## 🚀 快速开始
-
-### 前置要求
-
-- **Node.js** >= 22.15.0
-- **pnpm** >= 10.13.1
-- **WinPcap/Npcap** (网络抓包驱动)
-- **Visual Studio Build Tools** (编译依赖) 
-  - 可通过 [Visual Studio Installer](https://visualstudio.microsoft.com/visual-cpp-build-tools/) 安装
-  - 选择“C++ 生成工具”工作负载
-- **Python** 3.10 (编译依赖)
-  - 可通过 [Python 官网](https://www.python.org/downloads/) 下载并安装
-  - 确保 Python 添加到系统 PATH 中
 
 ### 安装步骤
 
 1. **克隆仓库**
-   ```bash
-   git clone https://github.com/dmlgzs/StarResonanceDamageCounter.git
-   cd StarResonanceDamageCounter
-   ```
 
-2. **安装依赖**
-   ```bash
-   corepack enable
-   pnpm install
-   ```
+<img width="415" height="308" alt="7d6a5995-cd28-4c74-bdd6-797b0c439066" src="https://github.com/user-attachments/assets/e9d33a58-7724-4b82-922f-2fefb3d2c149" />
 
-3. **安装 WinPcap/Npcap**
-   - 下载并安装 [Npcap](https://nmap.org/npcap/) 或 [WinPcap](https://www.winpcap.org/)（推荐 Npcap）
-   - 确保安装时选择了“WinPcap API-compatible mode”
-
-4. **运行**
-   ```bash
-   node server.js
+  直接点击下载安装包
    ```
+<img width="553" height="467" alt="image" src="https://github.com/user-attachments/assets/49dd5193-32ae-436f-845a-09b58fe070fd" />
+
+<img width="553" height="216" alt="image" src="https://github.com/user-attachments/assets/c238eec6-7277-4507-86bb-26c6245e5c39" />
+
+<img width="553" height="304" alt="image" src="https://github.com/user-attachments/assets/bfd6ef9e-e0d1-4c0b-9f60-fcba00f382c0" />
+
+<img width="553" height="795" alt="image" src="https://github.com/user-attachments/assets/8f8ff441-eea0-42f5-a1c3-da4b1b154dd6" />
+
+然后打开DPS显示器.exe就行了
+
 
 ### 使用方法
 
