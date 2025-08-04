@@ -11,6 +11,11 @@ const decoders = cap.decoders;
 const PROTOCOL = decoders.PROTOCOL;
 const print = console.log;
 const app = express();
+const deviceNum = parseInt(process.argv[2], 10) || 0;
+const logLevel = process.argv[3] || "info";
+
+console.log(`Using device number from args: ${deviceNum}`);
+console.log(`Using log level from args: ${logLevel}`);
 
 const rl = readline.createInterface({
     input: process.stdin,
@@ -55,38 +60,52 @@ let dps_window = {};
 let damage_time = {};
 let realtime_dps = {};
 
-async function main() {
+async function main(deviceNum, logLevel) {
     print('Welcome to use Damage Counter for Star Resonance by Dimole!');
     print('Version: V2.1');
     for (let i = 0; i < devices.length; i++) {
         print(i + '.\t' + devices[i].description);
     }
-    const num = await ask('Please enter the number of the device used for packet capture: ');
+
+  let num = deviceNum;
+  let level = logLevel;
+
+  if (typeof num !== 'number' || !devices[num]) {
+    num = parseInt(await ask('Please enter the number of the device used for packet capture: '), 10);
     if (!devices[num]) {
-        print('Cannot find device ' + num + '!');
-        process.exit(1);
+      print('Cannot find device ' + num + '!');
+      process.exit(1);
     }
-    const log_level = await ask('Please enter log level (info|debug): ') || 'info';
-    if (!log_level || !['info', 'debug'].includes(log_level)) {
-        print('Invalid log level!');
-        process.exit(1);
+  } else {
+    print(`Using device number from args: ${num}`);
+  }
+
+    if (!level || !['info', 'debug'].includes(level)) {
+        level = await ask('Please enter log level (info|debug): ') || 'info';
+        if (!['info', 'debug'].includes(level)) {
+            print('Invalid log level!');
+            process.exit(1);
+        }
+    } else {
+        print(`Using log level from args: ${level}`);
     }
-    rl.close();
+
+    rl.close();  // 交互结束后关闭
+
     const logger = winston.createLogger({
-        level: log_level,
+        level: level,
         format: winston.format.combine(
             winston.format.colorize({ all: true }),
             winston.format.timestamp({ format: 'YYYY-MM-DD HH:mm:ss' }),
-            winston.format.printf(info => {
-                return `[${info.timestamp}] [${info.level}] ${info.message}`;
-            })
+            winston.format.printf(info => `[${info.timestamp}] [${info.level}] ${info.message}`)
         ),
         transports: [
             new winston.transports.Console()
         ]
     });
 
-    //瞬时DPS
+
+    // 瞬时DPS计算定时器
     setInterval(() => {
         const now = Date.now();
         for (const uid of Object.keys(dps_window)) {
@@ -97,7 +116,7 @@ async function main() {
                 realtime_dps[uid] = {
                     value: 0,
                     max: 0,
-                }
+                };
             }
             realtime_dps[uid].value = 0;
             for (const b of dps_window[uid]) {
@@ -109,8 +128,9 @@ async function main() {
         }
     }, 100);
 
-    //express
+    // express静态资源和接口
     app.use(express.static('public'));
+
     app.get('/api/data', (req, res) => {
         const user = {};
         for (const uid of Object.keys(total_damage)) {
@@ -139,12 +159,12 @@ async function main() {
             user[uid].realtime_dps = realtime_dps[uid] ? realtime_dps[uid].value : 0;
             user[uid].realtime_dps_max = realtime_dps[uid] ? realtime_dps[uid].max : 0;
         }
-        const data = {
+        res.json({
             code: 0,
             user,
-        };
-        res.json(data);
+        });
     });
+
     app.get('/api/clear', (req, res) => {
         total_damage = {};
         total_count = {};
@@ -157,6 +177,7 @@ async function main() {
             msg: 'Statistics have been cleared!',
         });
     });
+
     app.listen(8989, () => {
         logger.info('Web Server started at http://localhost:8989');
     });
@@ -421,4 +442,4 @@ async function main() {
     })
 }
 
-main();
+main(deviceNum, logLevel);
