@@ -25,7 +25,7 @@ class OverlayWindow:
         self.root.attributes("-transparentcolor", "black")
         self.root.config(bg="black")
 
-        # 白色加粗字体 (缩小 30%)
+        # 白色加粗字体
         self.label = tk.Label(
             self.root,
             text="等待数据...",
@@ -169,7 +169,7 @@ class NodeLauncher(ctk.CTk):
             messagebox.showerror("错误", f"未找到 npm，请确保 Node.js 已正确安装。")
 
     def start_server(self):
-        """ 启动服务器 """
+        #启动服务器
         if self.proc:
             messagebox.showwarning("警告", "服务已经启动了！")
             return
@@ -214,7 +214,7 @@ class NodeLauncher(ctk.CTk):
         threading.Thread(target=self.update_overlay_data, daemon=True).start()
 
     def _read_output(self):
-        """ 读取输出 """
+        #读取输出
         try:
             for line in self.proc.stdout:
                 self.log_queue.put(line)
@@ -222,7 +222,7 @@ class NodeLauncher(ctk.CTk):
             self.log_queue.put(f"读取输出失败: {e}\n")
 
     def check_and_download_node(self):
-        """ 检查并下载 Node.js """
+        #检查并下载 Node.js
         node_exe_path = os.path.join(self.NODE_DIR, self.NODE_EXE_RELATIVE)
         if os.path.exists(node_exe_path):
             return node_exe_path
@@ -318,8 +318,8 @@ class NodeLauncher(ctk.CTk):
         threading.Timer(interval, self.auto_clear_data).start()
 
     def auto_clear_data(self):
-        self.clear_data()  # 调用清空数据的函数
-        self.auto_clear_timer()  # 再次启动定时器
+        self.clear_data()
+        self.auto_clear_timer()
 
     def clear_data(self):
         # 清空日志显示区域
