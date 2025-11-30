@@ -1,3 +1,13 @@
+
+
+
+
+！！！！！！！！！！注意！！！！！！！！！！！！！
+此项目以不再维护，垃圾游戏
+
+
+
+
 # 星痕共鸣实时战斗数据统计工具- 客户端 一键安装&游戏屏幕显示 (StarResonanceDamageCounter-Client)
 
 [![License: MPL 2.0](https://img.shields.io/badge/License-MPL%202.0-brightgreen.svg)](https://opensource.org/licenses/MPL-2.0)
